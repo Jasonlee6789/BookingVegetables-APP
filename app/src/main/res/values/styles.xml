@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
+        <!-- Customize your theme here. -->
+    <style name="CustomerToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+         <item name="android:background">@color/appBarColor</item>
+    </style>
+    <!--Menu item theme add a new style ensuring that you pick a different color for the popup-->
+    <style name="CustomPopupStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@color/menusColor</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">-4dp</item>
+    </style>
+
+
+</resources>

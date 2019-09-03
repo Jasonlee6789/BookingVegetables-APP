@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="backgroundColor">#CBFF8C</color>
+    <color name="btnBackgroundColor">#E3E36A</color>
+    <color name="txtColor">#160535</color>
+    <color name="btnSubmit">#9AA899</color>
+
+    <color name="appBarColor">#1C7C54</color>
+    <color name="menusColor">#CDDC39</color>
+</resources>
