@@ -75,7 +75,7 @@ public class DbHandler extends SQLiteOpenHelper {
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
 
 //Then make a string query that will select the name,  num ,selected from the table in the database.
-        String query = "SELECT name, num, selected FROM " + TABLE_Users;
+        String query = "SELECT id, name, num, selected FROM " + TABLE_Users;
 
         //Create an instance of the Cursor class and then pass the raw query to it
         //The results of the query are returned to you in a Cursor object
@@ -87,7 +87,7 @@ public class DbHandler extends SQLiteOpenHelper {
 //Within this while loop, collect the requested information and save it to a hashmap.
         while (cursor.moveToNext()) {
             HashMap<String, String> user = new HashMap<>();
-            user.put("id", String.valueOf(cursor.getColumnIndex(KEY_ID)));
+            user.put("id", cursor.getString(cursor.getColumnIndex(KEY_ID)));
             user.put("name", cursor.getString(cursor.getColumnIndex(KEY_NAME)));
             user.put("num", cursor.getString(cursor.getColumnIndex(KEY_NUM)));
             user.put("selected", cursor.getString(cursor.getColumnIndex(KEY_SELECTED)));

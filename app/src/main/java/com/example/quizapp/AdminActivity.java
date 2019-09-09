@@ -66,7 +66,7 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int i;
                 i  = Integer.parseInt(ID.getText().toString());
-
+                Toast.makeText(getApplicationContext(), "You should go back to LastActivity to check", Toast.LENGTH_SHORT).show();
                 db.deleteUser(i);
             }
         });
