@@ -37,8 +37,18 @@
         android:textSize="20dp"
         android:textColor="@color/txtColor"
         />
-
-    <ImageView
+<GridView
+    android:id="@+id/gridView"
+    android:layout_below="@+id/btnLogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:verticalSpacing="2dp"
+    android:background="#A5C4A6"
+    android:horizontalSpacing="1dp"
+    android:layout_centerInParent="true"
+    android:numColumns="auto_fit"
+    />
+<!--    <ImageView
         android:id="@+id/imageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -50,7 +60,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:layout_below="@id/btnLogin"
-        android:src="@drawable/lemon" />
+        android:src="@drawable/lemon" />-->
 <!--
 
     <Button
