@@ -45,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getBaseContext(),"You selceted package at :"+i, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(),"You selceted package at :"+i, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),GridItemActivity.class);
+               intent.putExtra("name",ImageAdapter.packNames[i]);
+               intent.putExtra("image", ImageAdapter.image_Id[i]);
+                startActivity(intent);
             }
         });
     }  // end of onCreate method

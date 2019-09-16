@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A5C4A6"
+    tools:context=".GridItemActivity">
+
+    <ImageView
+        android:id="@+id/imageViewData"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/textViewGridName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/s1" />
+
+    <TextView
+        android:id="@+id/textViewGridName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Sep-1st"
+        android:textColor="#3B1C32"
+        android:textSize="20sp" />
+
+</RelativeLayout>

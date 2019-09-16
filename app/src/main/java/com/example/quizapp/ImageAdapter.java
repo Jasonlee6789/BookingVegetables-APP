@@ -9,7 +9,8 @@ import android.widget.ImageView;
 
 public class ImageAdapter extends BaseAdapter {
 
-    private int[] image_id = {R.drawable.s1, R.drawable.s2, R.drawable.s3, R.drawable.s4};
+    public static  int[] image_Id = {R.drawable.s1, R.drawable.s2, R.drawable.s3, R.drawable.s4};
+    public static String[] packNames = {"Sep-1st","Sep-2nd","Sep-3rd","Sep-4th"};
 
     Context ctx;
 
@@ -17,7 +18,7 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return image_id.length;
+        return image_Id.length;
     }
 
     @Override
@@ -33,7 +34,6 @@ public class ImageAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ImageView img;
-
         if (view == null) {
             img = new ImageView(ctx);
             img.setLayoutParams(new GridView.LayoutParams(470,470));
@@ -42,7 +42,7 @@ public class ImageAdapter extends BaseAdapter {
         }  else {
             img = (ImageView) view;
         }
-        img.setImageResource(image_id[i]);
+        img.setImageResource(image_Id[i]);
         return img;
     }
 }

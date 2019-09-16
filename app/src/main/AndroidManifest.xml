@@ -5,18 +5,23 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="NZ WEEKLY Fr-Ve App"
+        android:label="NZ WEEKLY LIJING App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".AdminActivity" android:label="User Orders Summmary"></activity>
-     <!--   <activity android:name=".SendEmail">
+        <activity android:name=".GridItemActivity"></activity>
+        <activity
+            android:name=".AdminActivity"
+            android:label="User Orders Summmary" />
+        <!--
+   <activity android:name=".SendEmail">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <data android:mimeType="text/plain"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
         <activity android:name=".ListActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".LoginActivity" />
