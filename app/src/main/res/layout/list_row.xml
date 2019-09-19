@@ -6,22 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/pid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="11111"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/pid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11111"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="name"
-        android:layout_toRightOf="@+id/pid"
         android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/pid"
+        android:text="name"
         android:textSize="18dp"
         android:textStyle="bold" />
 

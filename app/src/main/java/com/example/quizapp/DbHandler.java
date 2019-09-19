@@ -82,7 +82,6 @@ public class DbHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 //Cursor object that will be used to fetch the records one by one.
 //The Cursor is always the mechanism with which you can navigate results from a database query and read rows and columns.
-
 //Iterate over the cursor object using a while loop and calling the moveToNext() method.
 //Within this while loop, collect the requested information and save it to a hashmap.
         while (cursor.moveToNext()) {

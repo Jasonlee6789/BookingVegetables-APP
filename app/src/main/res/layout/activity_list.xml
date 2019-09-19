@@ -19,18 +19,9 @@
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/orderList"
         android:layout_alignParentBottom="true"
-
-        android:layout_marginLeft="42dp"
-        android:layout_marginRight="61dp"
-
-
-        android:layout_toEndOf="@+id/btn_selected"
-        android:layout_toRightOf="@+id/btn_selected"
-
+        android:layout_centerHorizontal="true"
         android:background="@android:color/holo_orange_light"
-
         android:text="save" />
 
     <Button

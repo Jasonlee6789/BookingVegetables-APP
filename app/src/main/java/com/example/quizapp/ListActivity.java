@@ -42,7 +42,8 @@ public class ListActivity extends AppCompatActivity {
         btnReset = findViewById(R.id.btn_reset);
 
         btnSave = findViewById(R.id.btn_save);
-
+        btnSelected.setVisibility(View.VISIBLE);
+        btnSave.setVisibility(View.GONE);
         getIntentData();
         textUser = findViewById(R.id.textUser);
         textUser.setText("name:" + name + "      TEL:" + tel);
@@ -97,6 +98,8 @@ public class ListActivity extends AppCompatActivity {
                 isOldList = false;
                 final ArrayAdapter adapter1 = new ArrayAdapter(ListActivity.this, android.R.layout.simple_list_item_1, selectedList);
                 list.setAdapter(adapter1);
+                btnSave.setVisibility(View.VISIBLE);
+                btnSelected.setVisibility(View.GONE);
             }
         });
 
