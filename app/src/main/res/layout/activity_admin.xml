@@ -14,7 +14,8 @@
         android:id="@+id/user_list"
         android:layout_width="match_parent"
         android:layout_height="394dp"
-        android:dividerHeight="1dp"></ListView>
+        android:dividerHeight="1dp"
+        android:padding="30dp"></ListView>
 
 
     <RelativeLayout
