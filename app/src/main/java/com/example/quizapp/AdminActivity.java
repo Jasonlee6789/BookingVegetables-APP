@@ -1,6 +1,9 @@
 package com.example.quizapp;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +14,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +26,8 @@ public class AdminActivity extends AppCompatActivity {
     private Button btnUpdate;
     private Button btnDelete;
     private EditText ID,name,num,selected;
-
+    //step 3:Create a DrawerLayout instance in the MainActivity class
+    private DrawerLayout drawer ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,21 @@ public class AdminActivity extends AppCompatActivity {
         name = findViewById(R.id.updateName);
         num = findViewById(R.id.updateNum);
         selected = findViewById(R.id.updateSelected);
+
+//step 1:Tell our app that we want to use our newly created toolbar
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+// step 2:Then call the setSupportActionBar() method to display the toolbar in the app.
+        setSupportActionBar(toolbar);//Run the app and slide from the left side. At its current start,
+//step 3: and initialize it inside the onCreate() method by referencing it with the id drawer_layout
+//(the ID given to the activity_admin.xml)
+        drawer = findViewById(R.id.drawer_layout);
+        //step 4:Now add the code to create the ActionBarDrawerToggle instance
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.open_navigation_draw, R.string.close_navigation_draw);
+// step 5 :The next line should let the drawer instance call the addDrawerListener()
+        drawer.addDrawerListener(toggle);
+// step 6:The toggle instance must then call the syncState() method
+        toggle.syncState();
 
         final DbHandler db = new DbHandler(this);
 
@@ -70,5 +90,21 @@ public class AdminActivity extends AppCompatActivity {
                 db.deleteUser(i);
             }
         });
+    }// End of OnCreate()
+
+
+    // step 7 :. Override the onBackPressed() method so that we won’t leave the app when the back button is clicked.
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
+        }
+        super.onBackPressed();
+    }
+
+    private void setSupportActionBar(Toolbar toolbar) {
     }
 }
