@@ -107,7 +107,7 @@ public class DbHandler extends SQLiteOpenHelper {
         contentValues.put(KEY_NAME, name);
         contentValues.put(KEY_NUM, num);
         contentValues.put(KEY_SELECTED, selected);
-        int count = db.update(TABLE_Users,contentValues,KEY_NUM +" = ?",new String[]{String.valueOf(num)});
+        int count = db.update(TABLE_Users,contentValues,KEY_NAME +" = ?",new String[]{String.valueOf(name)});
 
        return count;
     }

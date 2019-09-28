@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".GridItemActivity"></activity>
+        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".GridItemActivity" />
         <activity
             android:name=".AdminActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="User Orders Summmary" />
+            android:label="User Orders Summmary"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
    <activity android:name=".SendEmail">
             <intent-filter>

@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,11 +10,11 @@
     tools:openDrawer="start"
     tools:context=".AdminActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -26,22 +25,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="left"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu">
-    </com.google.android.material.navigation.NavigationView>
-
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -51,14 +35,16 @@
         <ListView
             android:id="@+id/user_list"
             android:layout_width="match_parent"
-            android:layout_height="394dp"
-            android:dividerHeight="1dp"
-            android:padding="30dp"></ListView>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:dividerHeight="1dp" />
 
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="323dp">
+            android:layout_height="wrap_content">
 
 
             <Button
@@ -87,7 +73,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/NameTxt"
                 android:layout_toRightOf="@+id/btnDelete"
-                android:ems="10" />
+                android:ems="10"
+                android:hint="You should at first input the exist name"/>
 
             <EditText
                 android:id="@+id/updateNum"
@@ -95,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/NumTxt"
                 android:layout_toRightOf="@+id/btnDelete"
-                android:ems="10" />
+                android:ems="10"
+                android:hint="You can modify the NO. "/>
 
             <EditText
                 android:id="@+id/updateSelected"
@@ -103,7 +91,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/SelectedTxt"
                 android:layout_toRightOf="@+id/btnDelete"
-                android:ems="10" />
+                android:ems="10"
+                android:hint="You can modify the selected week "/>
 
             <EditText
                 android:id="@+id/deleteId"
@@ -149,6 +138,20 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu">
+    </com.google.android.material.navigation.NavigationView>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
 

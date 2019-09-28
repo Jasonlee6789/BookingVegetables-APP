@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -7,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,10 +18,12 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class AdminActivity extends AppCompatActivity {
+public class AdminActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
     Intent intent;
@@ -48,6 +52,10 @@ public class AdminActivity extends AppCompatActivity {
 //step 3: and initialize it inside the onCreate() method by referencing it with the id drawer_layout
 //(the ID given to the activity_admin.xml)
         drawer = findViewById(R.id.drawer_layout);
+        //link the fragement to the menu item click
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         //step 4:Now add the code to create the ActionBarDrawerToggle instance
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.open_navigation_draw, R.string.close_navigation_draw);
@@ -55,6 +63,8 @@ public class AdminActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
 // step 6:The toggle instance must then call the syncState() method
         toggle.syncState();
+
+
 
         final DbHandler db = new DbHandler(this);
 
@@ -103,6 +113,24 @@ public class AdminActivity extends AppCompatActivity {
             super.onBackPressed();
         }
         super.onBackPressed();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_chat:
+                //Toast.makeText(this, "Show the updated content ", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,DashboardActivity.class));
+                break;
+
+
+            case R.id.nav_share:
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     private void setSupportActionBar(Toolbar toolbar) {

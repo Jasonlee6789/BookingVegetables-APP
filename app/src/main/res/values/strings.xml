@@ -4,6 +4,6 @@
     <string name="admin">AdminAccount</string>
 
 
-    <string name ="open_navigation_draw">Open navigation drawer</string>
-    <string name ="close_navigation_draw">Close navigation drawer</string>
+    <string name="open_navigation_draw">Open navigation drawer</string>
+    <string name="close_navigation_draw">Close navigation drawer</string>
 </resources>
