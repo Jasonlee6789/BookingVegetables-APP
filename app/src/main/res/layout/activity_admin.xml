@@ -25,6 +25,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+
         <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,7 +64,6 @@
                 android:layout_below="@+id/btnUpdate"
                 android:layout_alignTop="@+id/DeleteTxt"
                 android:layout_marginLeft="20dp"
-
                 android:text="Delete"
                 android:textColor="@android:color/holo_orange_dark" />
 
@@ -78,7 +78,7 @@
 
             <EditText
                 android:id="@+id/updateNum"
-                android:layout_width="wrap_content"
+                android:layout_width="317dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/NumTxt"
                 android:layout_toRightOf="@+id/btnDelete"
@@ -87,7 +87,7 @@
 
             <EditText
                 android:id="@+id/updateSelected"
-                android:layout_width="wrap_content"
+                android:layout_width="317dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/SelectedTxt"
                 android:layout_toRightOf="@+id/btnDelete"
@@ -99,7 +99,8 @@
                 android:layout_width="317dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/DeleteTxt"
-                android:layout_toRightOf="@+id/btnDelete" />
+                android:layout_toRightOf="@+id/btnDelete"
+                android:hint="You can input the Leftest ID to delete "/>
 
             <TextView
                 android:id="@+id/NameTxt"

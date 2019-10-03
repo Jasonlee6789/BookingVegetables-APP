@@ -32,7 +32,6 @@
         android:layout_below="@+id/name"
         android:text="num"
         android:textColor="@android:color/holo_orange_dark"
-
         android:textSize="12dp" />
 
     <TextView
