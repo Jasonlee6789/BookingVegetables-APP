@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
               String name = et_name.getText().toString();
               String tel = et_tel.getText().toString();
               Intent intent = new Intent(LoginActivity.this, ListActivity.class);// change
-              intent.putExtra(IntentKey.USER_NAME, name);//使用petExtra（）系列方法向Intent对象存储数据
+              intent.putExtra(IntentKey.USER_NAME, name);//使用putExtra（）系列方法向Intent对象存储数据
               intent.putExtra(IntentKey.USER_PHONE,tel);
               startActivity(intent);
             }

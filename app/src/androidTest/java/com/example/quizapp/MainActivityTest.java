@@ -35,6 +35,8 @@ public class MainActivityTest {
         //messageToDisply ="This a  test message to test the input from the edit test"
 
     }
+
+    // this is UnitTest for testing the access to the LoginActivity
     @Test
     public void testLaunchLoginActivity(){
     assertNotNull(mainActivity.findViewById(R.id.btnLogin));
