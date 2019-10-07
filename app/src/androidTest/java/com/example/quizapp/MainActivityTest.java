@@ -27,6 +27,7 @@ public class MainActivityTest {
 
             // create a instance of the target class
             MainActivity mainActivity;
+
            // String messageToDisply;
     @Before
     public void setUp() throws Exception {
@@ -41,6 +42,7 @@ public class MainActivityTest {
     public void testLaunchLoginActivity(){
     assertNotNull(mainActivity.findViewById(R.id.btnLogin));
     onView(withId(R.id.btnLogin)).perform(click());
+
         Activity LoginActivity = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
         assertNotNull(LoginActivity);
 
