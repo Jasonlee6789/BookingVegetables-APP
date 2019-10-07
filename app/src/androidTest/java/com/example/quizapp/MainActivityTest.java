@@ -28,12 +28,12 @@ public class MainActivityTest {
             // create a instance of the target class
             MainActivity mainActivity;
 
-           // String messageToDisply;
+
     @Before
     public void setUp() throws Exception {
 
         mainActivity = activityTestRule.getActivity();
-        //messageToDisply ="This a  test message to test the input from the edit test"
+
 
     }
 
@@ -49,6 +49,6 @@ public class MainActivityTest {
     }
     @After
     public void tearDown() throws Exception {
-        mainActivity = null;
+
     }
 }

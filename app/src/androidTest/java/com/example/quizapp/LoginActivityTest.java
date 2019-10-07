@@ -2,6 +2,7 @@ package com.example.quizapp;
 
 import android.app.Activity;
 import android.app.Instrumentation;
+import android.widget.EditText;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,13 +11,20 @@ import org.junit.Test;
 
 import androidx.test.rule.ActivityTestRule;
 
+import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
 public class LoginActivityTest {
+
+
+
 
     @Rule
     public ActivityTestRule<LoginActivity> activityTestRule = new ActivityTestRule<>(LoginActivity.class);
@@ -28,10 +36,19 @@ public class LoginActivityTest {
     // create a instance of the target class
     LoginActivity loginActivity;
 
+    String nameToDisply;
+    String telToDisply;
+
+
+
     @Before
     public void setUp() throws Exception {
 
         loginActivity = activityTestRule.getActivity();
+
+        nameToDisply ="test LJ";
+        telToDisply = "test 666";
+
     }
 
     // this is UnitTest for testing the access to the ListActivity
@@ -43,6 +60,16 @@ public class LoginActivityTest {
         Activity ListActivity = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
         assertNotNull(ListActivity);
     }
+
+    // this @Test annotation is to test the Edittext from LoginActivity to ListActivity
+    @Test
+    public void testUserInputScenario() {
+        onView(withId(R.id.et_name)).perform(typeText(nameToDisply));
+        closeSoftKeyboard();
+        onView(withId(R.id.btnGo)).perform(click());
+        onView(withId(R.id.textUser)).check(matches(withText(nameToDisply)));
+    }
+
 
     @After
     public void tearDown() throws Exception {
