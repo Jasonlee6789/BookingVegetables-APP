@@ -68,15 +68,12 @@ public class DbHandler extends SQLiteOpenHelper {
 
     // method to get the uers from the database
     public ArrayList<HashMap<String, String>> getUsers() {
-        //In this method, create an instance of the SQLiteDatabase class
-        //and initialise it by calling the getWritableDatabase() method.
+        //In this method, create an instance of the SQLiteDatabase class and initialise it by calling the getWritableDatabase() method.
         SQLiteDatabase db = this.getWritableDatabase();
 //For the return type, you need to create a new ArrayList that contains a HashMap as shown:
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
-
 //Then make a string query that will select the name,  num ,selected from the table in the database.
         String query = "SELECT id, name, num, selected FROM " + TABLE_Users;
-
         //Create an instance of the Cursor class and then pass the raw query to it
         //The results of the query are returned to you in a Cursor object
         Cursor cursor = db.rawQuery(query, null);

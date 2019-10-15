@@ -46,7 +46,7 @@ public class ListActivity extends AppCompatActivity {
         btnSave.setVisibility(View.GONE);
         getIntentData();
         textUser = findViewById(R.id.textUser);
-        textUser.setText("name:" + name + "      TEL:" + tel);
+        textUser.setText("name:" + name + "   TEL:" + tel);
 
         createList();
 

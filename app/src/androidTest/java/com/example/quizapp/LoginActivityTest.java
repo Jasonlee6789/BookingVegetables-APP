@@ -47,7 +47,7 @@ public class LoginActivityTest {
         loginActivity = activityTestRule.getActivity();
 
         nameToDisply ="test LJ";
-        telToDisply = "test 666";
+        telToDisply = "666";
 
     }
 
@@ -61,16 +61,19 @@ public class LoginActivityTest {
         assertNotNull(ListActivity);
     }
 
-    // this @Test annotation is to test the Edittext from LoginActivity to ListActivity
-    @Test
-    public void testUserInputScenario() {
-        onView(withId(R.id.et_name)).perform(typeText(nameToDisply));
+
+    // this @Test  is to test the name + tel Edittext from LoginActivity to ListActivity
+   @Test
+    public void testUserInputTelScenario() {
+       onView(withId(R.id.et_name )).perform(typeText(nameToDisply));
+        onView(withId(R.id.et_tel )).perform(typeText(telToDisply));
+
         closeSoftKeyboard();
+
         onView(withId(R.id.btnGo)).perform(click());
-        onView(withId(R.id.textUser)).check(matches(withText(nameToDisply)));
+
+        onView(withId(R.id.textUser)).check(matches(withText("name:" + nameToDisply + "   TEL:"+ telToDisply)));
     }
-
-
     @After
     public void tearDown() throws Exception {
         loginActivity = null;

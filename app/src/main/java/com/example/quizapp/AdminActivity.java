@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,17 +19,17 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
-
+import androidx.drawerlayout.widget.DrawerLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AdminActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-
     Intent intent;
     private Button btnUpdate;
     private Button btnDelete;
     private EditText ID,name,num,selected;
+
     //step 3:Create a DrawerLayout instance in the MainActivity class
     private DrawerLayout drawer ;
 
@@ -47,8 +47,10 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
 
 //step 1:Tell our app that we want to use our newly created toolbar
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+
 // step 2:Then call the setSupportActionBar() method to display the toolbar in the app.
         setSupportActionBar(toolbar);//Run the app and slide from the left side. At its current start,
+
 //step 3: and initialize it inside the onCreate() method by referencing it with the id drawer_layout
 //(the ID given to the activity_admin.xml)
         drawer = findViewById(R.id.drawer_layout);
@@ -56,11 +58,13 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //step 4:Now add the code to create the ActionBarDrawerToggle instance
+//step 4:Now add the code to create the ActionBarDrawerToggle instance
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.open_navigation_draw, R.string.close_navigation_draw);
+
 // step 5 :The next line should let the drawer instance call the addDrawerListener()
         drawer.addDrawerListener(toggle);
+
 // step 6:The toggle instance must then call the syncState() method
         toggle.syncState();
 
@@ -87,7 +91,7 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
             DbHandler dbHandler = new DbHandler(AdminActivity.this);
             dbHandler.updateUserDetails(rname,rnum,rselected);
 
-                Toast.makeText(getApplicationContext(), "Use information has been  updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Use drawer to check information updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,7 +100,7 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
             public void onClick(View view) {
                 int i;
                 i  = Integer.parseInt(ID.getText().toString());
-                Toast.makeText(getApplicationContext(), "You should go back to LastActivity to check", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Use drawer to check information updated", Toast.LENGTH_SHORT).show();
                 db.deleteUser(i);
             }
         });
@@ -122,7 +126,6 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
                 //Toast.makeText(this, "Show the updated content ", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,DashboardActivity.class));
                 break;
-
 
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();

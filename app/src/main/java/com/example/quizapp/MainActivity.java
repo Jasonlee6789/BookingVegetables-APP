@@ -68,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.help_menu:
                 Intent helpintent = new Intent(this, HelpActivity.class);
                 startActivity(helpintent);
-                Toast.makeText(this, "Help!!!Jason", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Help!!!Jing", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.admin:
                 Intent adminIntent = new Intent(this, AdminActivity.class);
                 startActivity(adminIntent);
-                Toast.makeText(this, "This is the web admin can see the result", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "This is the adminaccount that  can see the order", Toast.LENGTH_SHORT).show();
                 break;
             default:
         }
