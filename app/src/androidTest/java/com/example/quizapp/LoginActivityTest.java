@@ -66,7 +66,7 @@ public class LoginActivityTest {
    @Test
     public void testUserInputTelScenario() {
        onView(withId(R.id.et_name )).perform(typeText(nameToDisply));
-        onView(withId(R.id.et_tel )).perform(typeText(telToDisply));
+       onView(withId(R.id.et_tel )).perform(typeText(telToDisply));
 
         closeSoftKeyboard();
 
